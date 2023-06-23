@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="16dp"
+    app:cardBackgroundColor="@color/card_color"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="10dp">
+
+    <TextView
+        android:id="@+id/title_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        tools:text="@tools:sample/lorem/random"
+        android:maxLines="5"
+        android:textColor="@color/white"
+        android:textSize="24sp" />
+</androidx.cardview.widget.CardView>
