@@ -29,18 +29,15 @@ class NotesAdapter(
         }
     }
 
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): RecyclerView.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val context = parent.context
         val inflater = LayoutInflater.from(context)
-        return TODO("Provide the return value")
+        val view = inflater.inflate(R.layout.recycler_item, parent, false)
+        val binding = RecyclerItemBinding.bind(view)
+        return SimpleNoteViewHolder(binding)
     }
-    override fun onBindViewHolder(
-        holder: RecyclerView.ViewHolder,
-        position: Int) {
-        holder as SimpleNoteViewHolder
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        (holder as SimpleNoteViewHolder).bind(noteList[position])
     }
 
     override fun getItemCount(): Int = noteList.size

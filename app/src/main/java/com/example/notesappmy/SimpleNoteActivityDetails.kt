@@ -3,9 +3,8 @@ package com.example.notesappmy
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.notesappmy.databinding.ActivityMainBinding
 import com.example.notesappmy.databinding.ActivitySimpleNoteBinding
-import com.example.notesappmy.db.Datebase
+import com.example.notesappmy.db.Database
 import com.example.notesappmy.models.Note
 
 class SimpleNoteActivityDetails : AppCompatActivity() {
@@ -16,20 +15,20 @@ class SimpleNoteActivityDetails : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        val note = intent.extras?.getSerializable(NOTE_KEY) as? Note
+        val note = intent.extras?.getSerializable(NOTE_KEY) as Note
         initViews(note)
-        val database = Datebase(this)
+        val database = Database(this)
         binding.saveButton.setOnClickListener {
             database.updateSimpleNote(
-                oldNote = note!!,
+                oldNote = note,
                 title = binding.titleEditView.text.toString(),
                 description = binding.descripitionEditView.text.toString(),
             )
+            showToast(message = "Ваша заметка успешно сохранена")
         }
         binding.backButton.setOnClickListener {
             onBackPressed()
         }
-        showToast(message = "Ваша заметка успешно обнавлена")
     }
 
     private fun initViews(note: Note?) {

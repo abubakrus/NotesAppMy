@@ -13,4 +13,9 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="SearchViewStyle">
+        <item name="android:textColor">@color/search_view_color</item>
+        <item name="android:textColorHint">@color/search_view_color</item>
+        <item name="android:textSize">16dp </item>
+    </style>
 </resources>

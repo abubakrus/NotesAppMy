@@ -17,5 +17,6 @@
         tools:text="@tools:sample/lorem/random"
         android:maxLines="5"
         android:textColor="@color/white"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        />
 </androidx.cardview.widget.CardView>

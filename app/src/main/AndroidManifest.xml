@@ -12,6 +12,9 @@
         android:theme="@style/Theme.NotesAppMy"
         tools:targetApi="31">
         <activity
+            android:name=".SearchViewActivity"
+            android:exported="false" />
+        <activity
             android:name=".SimpleNoteActivityDetails"
             android:exported="false" />
         <activity

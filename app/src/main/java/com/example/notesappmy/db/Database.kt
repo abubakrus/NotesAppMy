@@ -9,9 +9,7 @@ import java.lang.reflect.Type
 private const val NOTES_SHARED_PREF_KEY = "NOTES_SHARED_PREF_KEY"
 private const val ALL_NOTES_KEY = "ALL_NOTES_KEY"
 
-class Datebase (
-    private val context:Context
-    ){
+class Database(context:Context){
     private val sharedPreferences =context.getSharedPreferences(
         NOTES_SHARED_PREF_KEY,
         Context.MODE_PRIVATE
@@ -23,7 +21,7 @@ class Datebase (
         val list = gson.fromJson<List<Note>>(json, type)
         return list ?: emptyList()
     }
-    fun saveNewNote(isSimpleNote : String): Note {
+    fun saveNewNote(): Note {
 
         val note = Note(
             title = "111",

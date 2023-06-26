@@ -27,6 +27,7 @@
             android:layout_weight="1" />
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/search_button"
             android:layout_width="50dp"
             android:layout_height="50dp"
             app:cardBackgroundColor="@color/card_color"
@@ -59,10 +60,12 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="82dp"
-        tools:listitem="@layout/recycler_item" />
+        tools:listitem="@layout/recycler_item"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
     <LinearLayout
         android:layout_width="wrap_content"

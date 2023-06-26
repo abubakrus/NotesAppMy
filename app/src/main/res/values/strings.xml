@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">NotesAppMy</string>
+    <string name="food_recipe">Food Recipe</string>
 </resources>
