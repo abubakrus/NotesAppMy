@@ -5,9 +5,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.notesappmy.databinding.RecyclerItemBinding
 import com.example.notesappmy.models.Note
+import kotlin.reflect.KFunction1
 
 class NotesAdapter(
-    private val navigateToSimpleNoteActivityDetailsScreen: (note: Note) -> Unit,
+    private val navigateToSimpleNoteActivityDetailsScreen: KFunction1<Note, Unit>,
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val noteList = mutableListOf<Note>()
@@ -41,4 +42,7 @@ class NotesAdapter(
     }
 
     override fun getItemCount(): Int = noteList.size
+
     }
+
+

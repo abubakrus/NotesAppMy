@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
@@ -62,8 +63,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
+            android:backgroundTint="@android:color/transparent"
+            android:fontFamily="@font/nunito_sans_light"
+            android:hint="Input title"
             android:maxLines="3"
             android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:textSize="35sp"
             tools:text="@tools:sample/lorem/random" />
 
@@ -72,7 +77,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
+            android:backgroundTint="@android:color/transparent"
+            android:fontFamily="@font/nunito_sans_light"
+            android:hint="Input title"
             android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:textSize="24sp"
             tools:text="@tools:sample/lorem/random" />
     </LinearLayout>

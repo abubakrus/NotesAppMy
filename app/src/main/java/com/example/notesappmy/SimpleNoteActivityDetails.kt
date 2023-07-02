@@ -36,7 +36,8 @@ class SimpleNoteActivityDetails : AppCompatActivity() {
         binding.titleEditView.setText(note.title)
         binding.descripitionEditView.setText(note.descripition)
     }
-    private fun showToast(message:String){
+
+    private fun showToast(message: String) {
         Toast.makeText(
             this,
             message,

@@ -17,9 +17,12 @@
         android:background="@drawable/search_view_background"
         android:iconifiedByDefault="false"
         android:queryHint="@string/food_recipe"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/search_image"
         android:layout_width="312dp"
@@ -28,6 +31,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search_view"
-        app:srcCompat="@drawable/search_view_img"
-        />
+        app:srcCompat="@drawable/search_view_img" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_in_search"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_view" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

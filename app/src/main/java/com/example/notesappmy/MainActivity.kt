@@ -1,14 +1,14 @@
 package com.example.notesappmy
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.core.content.ContextCompat.startActivity
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isGone
+import androidx.core.view.isInvisible
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.example.notesappmy.databinding.ActivityMainBinding
-import com.example.notesappmy.databinding.ActivitySearchViewBinding
-import com.example.notesappmy.databinding.ActivitySimpleNoteBinding
 import com.example.notesappmy.db.Database
 import com.example.notesappmy.models.Note
 
@@ -20,7 +20,9 @@ class MainActivity() : AppCompatActivity() {
         Database(this)
     }
     private val adapter: NotesAdapter by lazy {
-        NotesAdapter(navigateToSimpleNoteActivityDetailsScreen = ::navigateToSimpleNoteActivityDetailsScreen)
+        NotesAdapter(
+            navigateToSimpleNoteActivityDetailsScreen = ::navigateToSimpleNoteActivityDetailsScreen,
+        )
     }
 
 
@@ -31,9 +33,16 @@ class MainActivity() : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
         adapter.updateList(allNotesList)
         binding.recyclerView.adapter = adapter
+        if (allNotesList.isNotEmpty()) {
+            binding.recyclerView.isVisible = true
+            binding.mainActivityImg.isVisible = false
+        }else {
+            binding.mainActivityImg.isVisible = true
+            binding.recyclerView.isVisible = false
+        }
+
         binding.plusButton.setOnClickListener {
             val note = database.saveNewNote()
             allNotesList.add(note)
@@ -45,8 +54,9 @@ class MainActivity() : AppCompatActivity() {
         }
         val swipeToDeleteCallBack = object : ItemTouchHelperCallback() {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                val position = viewHolder.adapterPosition
-                allNotesList.removeAt(position)
+                val note = allNotesList[viewHolder.adapterPosition]
+                allNotesList.remove(note)
+                database.deleteSimpleNote(note)
                 adapter.updateList(allNotesList)
             }
         }
@@ -68,8 +78,15 @@ class MainActivity() : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         adapter.updateList(database.getAllNotes())
+
+        if (allNotesList.isNotEmpty()) {
+            binding.recyclerView.isVisible = true
+            binding.mainActivityImg.isVisible = false
+        } else {
+            binding.mainActivityImg.isVisible = true
+            binding.recyclerView.isVisible = false
+        }
     }
-
-
 }
+
 const val NOTE_KEY = "NOTE_KEY"
