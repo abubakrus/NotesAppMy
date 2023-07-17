@@ -20,15 +20,15 @@
     <color name="teal_200">#FF03DAC5</color>
 
 
-<!--    <array name="android_colors">-->
-<!--        <item>@color/ping</item>-->
-<!--        <item>@color/purple</item>-->
-<!--        <item>@color/light_green</item>-->
-<!--        <item>@color/yellow</item>-->
-<!--        <item>@color/orange</item>-->
-<!--        <item>@color/purple_500</item>-->
-<!--        <item>@color/teal_700</item>-->
-<!--        <item>@color/red</item>-->
-<!--        <item>@color/dark_green</item>-->
-<!--    </array>-->
+    <integer-array name="myColors">
+        <item>@color/ping</item>
+        <item>@color/purple</item>
+        <item>@color/light_green</item>
+        <item>@color/yellow</item>
+        <item>@color/orange</item>
+        <item>@color/purple_500</item>
+        <item>@color/teal_700</item>
+        <item>@color/red</item>
+        <item>@color/dark_green</item>
+    </integer-array>
 </resources>

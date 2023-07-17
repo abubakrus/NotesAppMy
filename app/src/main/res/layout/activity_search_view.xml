@@ -36,7 +36,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_in_search"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="14dp"
         android:layout_margin="8dp"
         android:visibility="gone"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"

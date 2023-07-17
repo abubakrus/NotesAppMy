@@ -3,8 +3,6 @@ package com.example.notesappmy
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isGone
-import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
@@ -42,7 +40,6 @@ class MainActivity() : AppCompatActivity() {
             binding.mainActivityImg.isVisible = true
             binding.recyclerView.isVisible = false
         }
-
         binding.plusButton.setOnClickListener {
             val note = database.saveNewNote()
             allNotesList.add(note)

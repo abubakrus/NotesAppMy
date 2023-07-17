@@ -10,6 +10,7 @@ import kotlin.reflect.KFunction1
 class NotesAdapter(
     private val navigateToSimpleNoteActivityDetailsScreen: KFunction1<Note, Unit>,
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    private val colors = context.resources.getIntArray(R.array.myColors)
 
     private val noteList = mutableListOf<Note>()
 

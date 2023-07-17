@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.SearchView
-import androidx.appcompat.R
 import androidx.core.view.isVisible
 import com.example.notesappmy.databinding.ActivitySearchViewBinding
 import com.example.notesappmy.db.Database
